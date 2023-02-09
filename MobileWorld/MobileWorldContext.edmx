@@ -31,6 +31,7 @@
           <Property Name="DevicePrice" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DeviceCharact" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DeviceCategory" Type="int" Nullable="false" />
+          <Property Name="DeviceImage" Type="image" />
         </EntityType>
         <EntityType Name="DeviceBill">
           <Key>
@@ -156,6 +157,7 @@
           <Property Name="DevicePrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DeviceCharact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DeviceCategory" Type="Int32" Nullable="false" />
+          <Property Name="DeviceImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_DeviceCategory" FromRole="Device" ToRole="Category" />
           <NavigationProperty Name="DeviceBills" Relationship="Self.FK_DeviceID" FromRole="Device" ToRole="DeviceBill" />
         </EntityType>
@@ -229,7 +231,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MOBILESTOREDBEContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MOBILESTOREDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
           <EntitySet Name="Devices" EntityType="Self.Device" />
@@ -257,7 +259,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MOBILESTOREDBModelStoreContainer" CdmEntityContainer="MOBILESTOREDBEContext">
+        <EntityContainerMapping StorageEntityContainer="MOBILESTOREDBModelStoreContainer" CdmEntityContainer="MOBILESTOREDBContext">
           <EntitySetMapping Name="Bills">
             <EntityTypeMapping TypeName="MOBILESTOREDBModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
@@ -285,6 +287,7 @@
                 <ScalarProperty Name="DevicePrice" ColumnName="DevicePrice" />
                 <ScalarProperty Name="DeviceCharact" ColumnName="DeviceCharact" />
                 <ScalarProperty Name="DeviceCategory" ColumnName="DeviceCategory" />
+                <ScalarProperty Name="DeviceImage" ColumnName="DeviceImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6a26d828ab1b4d6fab113a0d0ddf93f4" Name="Diagram1">
+      <Diagram DiagramId="e4f7a1d15d604dd681f4284babd3682c" Name="Diagram1">
         <EntityTypeShape EntityType="MOBILESTOREDBModel.Bill" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Category" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Device" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Device" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MOBILESTOREDBModel.DeviceBill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="MOBILESTOREDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="MOBILESTOREDBModel.FK_BillEmployee" ManuallyRouted="false" />

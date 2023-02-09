@@ -53,35 +53,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeForm.Designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bill.cs">
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBaseContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBaseContext.edmx</DependentUpon>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Device.cs">
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
     </Compile>
     <Compile Include="DeviceBill.cs">
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeviceItem.Designer.cs">
+      <DependentUpon>DeviceItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devices.Designer.cs">
+      <DependentUpon>Devices.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>DataBaseContext.tt</DependentUpon>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -89,8 +92,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MobileWorldContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileWorldContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileWorldContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MobileWorldContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceItem.resx">
+      <DependentUpon>DeviceItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devices.resx">
+      <DependentUpon>Devices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,12 +130,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="DataBaseContext.edmx">
+    <EntityDeploy Include="MobileWorldContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataBaseContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>MobileWorldContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataBaseContext.edmx.diagram">
-      <DependentUpon>DataBaseContext.edmx</DependentUpon>
+    <None Include="MobileWorldContext.edmx.diagram">
+      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -128,15 +155,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseContext.Context.tt">
+    <Content Include="MobileWorldContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataBaseContext.edmx</DependentUpon>
-      <LastGenOutput>DataBaseContext.Context.cs</LastGenOutput>
+      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
+      <LastGenOutput>MobileWorldContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataBaseContext.tt">
+    <Content Include="MobileWorldContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataBaseContext.edmx</DependentUpon>
-      <LastGenOutput>DataBaseContext.cs</LastGenOutput>
+      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
+      <LastGenOutput>MobileWorldContext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
