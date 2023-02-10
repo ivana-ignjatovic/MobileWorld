@@ -24,7 +24,7 @@ namespace MobileWorld
         public string DevicePrice { get; set; }
         public string DeviceCharact { get; set; }
         public int DeviceCategory { get; set; }
-        public byte[] DeviceImage { get; set; }
+        public string DeviceImage { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<DeviceBill> DeviceBills { get; set; }

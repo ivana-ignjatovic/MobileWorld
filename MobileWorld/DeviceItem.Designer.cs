@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelImage = new System.Windows.Forms.Panel();
+            this.buttonAddToBill = new System.Windows.Forms.Button();
+            this.labelId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,10 +57,32 @@
             // 
             // panelImage
             // 
+            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelImage.Location = new System.Drawing.Point(51, 39);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(224, 149);
             this.panelImage.TabIndex = 2;
+            // 
+            // buttonAddToBill
+            // 
+            this.buttonAddToBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
+            this.buttonAddToBill.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAddToBill.Image = global::MobileWorld.Properties.Resources.icons8_loading_heart_24;
+            this.buttonAddToBill.Location = new System.Drawing.Point(260, 248);
+            this.buttonAddToBill.Name = "buttonAddToBill";
+            this.buttonAddToBill.Size = new System.Drawing.Size(52, 47);
+            this.buttonAddToBill.TabIndex = 3;
+            this.buttonAddToBill.UseVisualStyleBackColor = false;
+            this.buttonAddToBill.Click += new System.EventHandler(this.buttonAddToBill_Click);
+            // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.Location = new System.Drawing.Point(291, 28);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(51, 20);
+            this.labelId.TabIndex = 4;
+            this.labelId.Text = "label3";
             // 
             // DeviceItem
             // 
@@ -67,6 +91,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.labelId);
+            this.Controls.Add(this.buttonAddToBill);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -76,13 +102,16 @@
             this.Size = new System.Drawing.Size(321, 299);
             this.Load += new System.EventHandler(this.DeviceItem_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
+       // public System.Windows.Forms.Label labelID;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panelImage;
+        public System.Windows.Forms.Button buttonAddToBill;
+        public System.Windows.Forms.Label labelId;
     }
 }

@@ -28,7 +28,7 @@ namespace MobileWorld
             employee.EmployeeRole = comboBoxRole.SelectedItem.ToString();
             originalValue = employee.EmployeeRole;
             employee.EmployeePhone = textBoxPhone.Text;
-            MOBILESTOREDBContext context = new MOBILESTOREDBContext();
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             context.Employees.Add(employee);
             context.SaveChanges();
             RefreshData();
@@ -36,13 +36,13 @@ namespace MobileWorld
 
         private void RefreshData()
         {
-            MOBILESTOREDBContext context = new MOBILESTOREDBContext();
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             dataGridView1.DataSource = context.Employees.ToList();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            MOBILESTOREDBContext context = new MOBILESTOREDBContext();
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             int idSelect = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["EmployeeID"].Value.ToString());
             Employee employee = context.Employees.Where(em => em.EmployeeID == idSelect).FirstOrDefault();
             if (employee != null)
@@ -56,7 +56,7 @@ namespace MobileWorld
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            MOBILESTOREDBContext context = new MOBILESTOREDBContext();
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             int idSelect = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["EmployeeID"].Value.ToString());
             Employee employee = context.Employees.Where(em => em.EmployeeID == idSelect).FirstOrDefault();
             if (employee != null)
@@ -85,6 +85,11 @@ namespace MobileWorld
                     dataGridView1.CancelEdit();
                 }
             }
+        }
+
+        private void AddEmployeeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

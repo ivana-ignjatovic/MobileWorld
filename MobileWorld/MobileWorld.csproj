@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -60,16 +60,22 @@
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs">
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CategoryPanel.Designer.cs">
+      <DependentUpon>CategoryPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Device.cs">
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="DeviceBill.cs">
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="DeviceItem.cs">
       <SubType>UserControl</SubType>
@@ -84,7 +90,7 @@
       <DependentUpon>Devices.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,25 +98,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MobileWorldContext.Context.cs">
+    <Compile Include="MobileWorld.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MobileWorldContext.Context.tt</DependentUpon>
+      <DependentUpon>MobileWorld.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="MobileWorldContext.cs">
+    <Compile Include="MobileWorld.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MobileWorldContext.tt</DependentUpon>
+      <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="MobileWorldContext.Designer.cs">
+    <Compile Include="MobileWorld.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
+      <DependentUpon>MobileWorld.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoryPanel.resx">
+      <DependentUpon>CategoryPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeviceItem.resx">
       <DependentUpon>DeviceItem.cs</DependentUpon>
@@ -129,13 +138,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="MobileWorldContext.edmx">
+    <EntityDeploy Include="MobileWorld.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MobileWorldContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>MobileWorld.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="MobileWorldContext.edmx.diagram">
-      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
+    <None Include="MobileWorld.edmx.diagram">
+      <DependentUpon>MobileWorld.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -155,15 +165,19 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MobileWorldContext.Context.tt">
+    <None Include="Resources\icons8-loading-heart-24.png" />
+    <None Include="Resources\casino-poker-heart-figure-line-style-icon-free-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MobileWorld.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
-      <LastGenOutput>MobileWorldContext.Context.cs</LastGenOutput>
+      <DependentUpon>MobileWorld.edmx</DependentUpon>
+      <LastGenOutput>MobileWorld.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="MobileWorldContext.tt">
+    <Content Include="MobileWorld.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MobileWorldContext.edmx</DependentUpon>
-      <LastGenOutput>MobileWorldContext.cs</LastGenOutput>
+      <DependentUpon>MobileWorld.edmx</DependentUpon>
+      <LastGenOutput>MobileWorld.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

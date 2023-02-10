@@ -13,10 +13,10 @@ namespace MobileWorld
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MOBILESTOREDBContext : DbContext
+    public partial class MOBILESTOREDBEContext : DbContext
     {
-        public MOBILESTOREDBContext()
-            : base("name=MOBILESTOREDBContext")
+        public MOBILESTOREDBEContext()
+            : base("name=MOBILESTOREDBEContext")
         {
         }
     
