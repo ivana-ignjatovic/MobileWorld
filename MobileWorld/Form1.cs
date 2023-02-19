@@ -21,40 +21,73 @@ namespace MobileWorld
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
-            Employee employee = new Employee();
-            employee.EmployeeName = "Ivana";
-            employee.EmployeeSurname = "Ignjatovic";
-            employee.EmployeePhone = "0605511358";
-            employee.EmployeeRole = "Administrator";
-            context.Employees.Add(employee);
-            context.SaveChanges();
-            RefreshData();
-        }
-        private void RefreshData()
-        {
-            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
-            //dataGridView1.DataSource = context.Employees.ToList();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            RefreshData();
-            List<Device> devices = new List<Device>();
+           
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
+            List<Category> categories = new List<Category>();
+            categories=context.Categories.ToList();
+            foreach(var category in categories)
+            {
+                var categoryItem = new CategoryPanel(category);
+                categoryItem.ButtonClick += CategoryPanel_LabelClick;
+                categoryItem.Location = new Point(50, 50 + (categories.IndexOf(category) * categoryItem.Height));
+                int x = (panelCategory.Width - categoryItem.Width) / 2;
+                categoryItem.Left = x;
+                
+
+                panelCategory.Controls.Add(categoryItem);
+            }
+        }
+        private void DeviceItem_ButtonClick(object sender, EventArgs e)
+        {
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
+            List<Device> devices = new List<Device>();
             devices = context.Devices.ToList();
+            DevicePanel deviceItem = (DevicePanel)sender;
+            Device currentDevice = deviceItem.currentDevice;
+
+            // devicesForBill.Add(currentDevice);
+
+            
+
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = System.Drawing.Color.White;
+
+            dataGridView1.Rows.Add(currentDevice.DeviceName+ ".......................................", "............." + currentDevice.DevicePrice+"RSD");
+                    
+                
+         
+
+
+
+
+
+            //dataGridView1.DataSource = devicesForBill;
+            Console.WriteLine("Usao " + devicesForBill.Count());
+            
+
+        }
+        private void CategoryPanel_LabelClick(object sender, EventArgs e)
+        {
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
+            CategoryPanel categoryPanel = (CategoryPanel)sender;
+            
+            panelDevices.Controls.Clear();
+            Category currentCategory = categoryPanel.currentCategory;
+            List<Device> devices = new List<Device>();
+            devices = context.Devices.ToList();
+          
             int x = 10;
             int y = 10;
             int counter = 0;
             foreach (var device in devices)
             {
-                
-                var deviceItem = new DeviceItem(device);
-                deviceItem.Click += DeviceItem_Click;
+                if (currentCategory.CategoryID == device.DeviceCategory)
+                {
+                var deviceItem = new DevicePanel(device);
+                deviceItem.ButtonClick += DeviceItem_ButtonClick;
                 deviceItem.Location = new Point(x, y);
                 panelDevices.Controls.Add(deviceItem);
 
@@ -65,74 +98,24 @@ namespace MobileWorld
                     x = 10;
                     y += deviceItem.Height + 10;
                 }
-               
-            }
-            List<Category> categories = new List<Category>();
-            categories=context.Categories.ToList();
-            foreach(var category in categories)
-            {
-                var categoryItem = new CategoryPanel();
-                categoryItem.Location = new Point(10, 10 + (categories.IndexOf(category) * categoryItem.Height));
-                categoryItem.labelCategory.Text = category.CategoryName;
-                panelCategory.Controls.Add(categoryItem);
+                }
+                else
+                {
+                    Console.WriteLine("Nema uredjaja za datu kategoriju");
+              }  
+         
+
             }
 
-
         }
-        private void DeviceItem_Click(object sender, EventArgs e)
-        {
-            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
-            List<Device> devices = new List<Device>();
-            devices = context.Devices.ToList();
-            Console.WriteLine("Usao");
-            DeviceItem deviceItem = (DeviceItem)sender;
-            Device currentDevice = deviceItem.currentDevice;
-            //dataGridView1.
-           // for(int i = 0; i < 4; i++)
-            //{
-                devicesForBill.Add(currentDevice);
-            //}
-            dataGridView1.Rows.Add(currentDevice.DeviceID,currentDevice.DeviceName);
-            //dataGridView1.DataSource = devicesForBill;
-            Console.WriteLine("Usao " + devicesForBill.Count());
-            
 
-        }
-        
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            //MOBILESTOREDBContext context = new MOBILESTOREDBContext();
-
-
-            // Device device = new Device();
-            // device.DeviceName = "Samsung A53";
-            // device.DevicePrice = "22000";
-            //  device.DeviceCategory = 1;
-            //  device.DeviceCharact = "Opis";
-            //  context.Devices.Add(device);
-            // context.SaveChanges();
-          
-        }
+       
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
@@ -152,7 +135,12 @@ namespace MobileWorld
             devices.ShowDialog();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panelDevices_Paint(object sender, PaintEventArgs e)
         {
 
         }

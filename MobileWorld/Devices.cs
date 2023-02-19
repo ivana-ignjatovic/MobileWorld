@@ -44,6 +44,8 @@ namespace MobileWorld
         {
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             dataGridView1.DataSource = context.Categories.ToList();
+            Form1 form= new Form1();
+            
             
         }
 
@@ -177,6 +179,13 @@ private static byte[] CompressImage(Image image, long quality)
             }
             context.Devices.Add(device);
             context.SaveChanges();
+            MessageBox.Show("Uspesno ste uneli uredjaj!");
+            textBoxDeviceName.Text =string.Empty;
+            textBoxDevicePrice.Text = string.Empty;
+            richTextBox1.Text = string.Empty;
+            pictureBox1.Image = null;
+
+
             RefreshData();
         }
 
@@ -189,6 +198,16 @@ private static byte[] CompressImage(Image image, long quality)
             context.Categories.Add(category);
             context.SaveChanges();
             RefreshData();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

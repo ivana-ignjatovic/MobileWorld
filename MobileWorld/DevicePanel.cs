@@ -12,17 +12,18 @@ using System.Windows.Forms;
 
 namespace MobileWorld
 {
-    public partial class DeviceItem : UserControl
+    public partial class DevicePanel : UserControl
     {
         public Device currentDevice { get; set; }
-
-        public DeviceItem(Device device)
+        public event EventHandler ButtonClick;
+        public DevicePanel(Device device)
         {
            
             
             InitializeComponent();
             currentDevice= device;
             label1.Text = device.DeviceName;
+            labelId.Visible = false;
             label2.Text = device.DevicePrice;
             labelId.Text = device.DeviceID.ToString();
 
@@ -35,6 +36,10 @@ namespace MobileWorld
          
              
         }
+       
+
+      
+
         Image ConvertBinaryToImage(byte [] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
@@ -54,15 +59,16 @@ namespace MobileWorld
 
         }
 
-        private void buttonAddToBill_Click(object sender, EventArgs e)
-        {
-            //Form1 form= new Form1();
-            
-        }
+        
 
         internal void buttonAddToBill_Click(object v, object sender, EventArgs eventArgs, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void buttonAddToBill_Click(object sender, EventArgs e)
+        {
+            ButtonClick?.Invoke(this, e);
         }
     }
 }

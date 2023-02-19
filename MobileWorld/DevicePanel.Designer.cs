@@ -1,6 +1,6 @@
 ﻿namespace MobileWorld
 {
-    partial class DeviceItem
+    partial class DevicePanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelId);
             this.Controls.Add(this.buttonAddToBill);
             this.Controls.Add(this.panelImage);
@@ -99,7 +99,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "DeviceItem";
             this.Padding = new System.Windows.Forms.Padding(6);
-            this.Size = new System.Drawing.Size(321, 299);
+            this.Size = new System.Drawing.Size(323, 301);
             this.Load += new System.EventHandler(this.DeviceItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

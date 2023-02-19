@@ -22,15 +22,52 @@ namespace MobileWorld
 
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee();
-            employee.EmployeeName = textBoxName.Text;
-            employee.EmployeeSurname = textBoxSurname.Text;
-            employee.EmployeeRole = comboBoxRole.SelectedItem.ToString();
-            originalValue = employee.EmployeeRole;
-            employee.EmployeePhone = textBoxPhone.Text;
-            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
-            context.Employees.Add(employee);
-            context.SaveChanges();
+          
+            if(textBoxName.Text == "" || textBoxSurname.Text == "" ||
+                comboBoxRole.SelectedItem.ToString()== "" || textBoxPhone.Text == ""
+                || textBoxUsername.Text=="" || textBoxPassword.Text == "")
+            {
+                MessageBox.Show("Morate uneti sva polja!");
+            }
+            else
+            {
+                MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
+                var employees = context.Employees.ToList();
+                var result = employees.Where(x => x.EmployeeUsername == textBoxUsername.Text);
+                if (result == null)
+                {
+                    Employee employee = new Employee();
+                    employee.EmployeeName = textBoxName.Text;
+                    employee.EmployeeSurname = textBoxSurname.Text;
+                    employee.EmployeeRole = comboBoxRole.SelectedItem.ToString();
+                    originalValue = employee.EmployeeRole;
+                    employee.EmployeePhone = textBoxPhone.Text;
+                    employee.EmployeeUsername = textBoxUsername.Text;
+                    employee.EmployeePassword = textBoxPassword.Text;
+                    context.Employees.Add(employee);
+                    context.SaveChanges();
+                    MessageBox.Show("Uspesno ste uneli radnika!");
+                    ClearTextBox();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Vec postoji korisnik sa istim korisnickim imenom!");
+                    ClearTextBox();
+                }
+
+            }
+           
+        }
+        public void ClearTextBox()
+        {
+            textBoxName.Clear();
+            textBoxSurname.Clear();
+            textBoxPhone.Clear();
+            textBoxUsername.Clear();
+            textBoxPassword.Clear();
+            comboBoxRole.Items.Clear();
             RefreshData();
         }
 
@@ -38,6 +75,12 @@ namespace MobileWorld
         {
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             dataGridView1.DataSource = context.Employees.ToList();
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.RowTemplate.Height = 100;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -76,8 +119,6 @@ namespace MobileWorld
               if (dataGridView1.Columns[e.ColumnIndex].Name == "EmployeeRole")
             {
                 string cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-
-                // Provjeri da li je vrijednost ćelije u combo box-u
                 if (!comboBoxRole.Items.Contains(cellValue))
                 {
                     MessageBox.Show("Dozvoljene vrijednosti su: " + string.Join(", ", comboBoxRole.Items.Cast<string>()));
@@ -88,6 +129,11 @@ namespace MobileWorld
         }
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
         }

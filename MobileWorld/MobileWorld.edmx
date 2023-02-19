@@ -51,6 +51,8 @@
           <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmployeeRole" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmployeePhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeUsername" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeePassword" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_BillEmployee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
@@ -181,6 +183,8 @@
           <Property Name="EmployeeSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeeRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeePassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Bills" Relationship="Self.FK_BillEmployee" FromRole="Employee" ToRole="Bill" />
         </EntityType>
         <Association Name="FK_BillEmployee">
@@ -308,6 +312,8 @@
                 <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
                 <ScalarProperty Name="EmployeeRole" ColumnName="EmployeeRole" />
                 <ScalarProperty Name="EmployeePhone" ColumnName="EmployeePhone" />
+                <ScalarProperty Name="EmployeeUsername" ColumnName="EmployeeUsername" />
+                <ScalarProperty Name="EmployeePassword" ColumnName="EmployeePassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

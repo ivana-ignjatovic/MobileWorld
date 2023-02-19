@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCategory = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.labelCategory = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DeviceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DevicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonDeleteBillITem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDevices = new System.Windows.Forms.Panel();
@@ -44,9 +45,7 @@
             this.zaposleniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uredjajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.racuniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeviceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeviceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelCategory.SuspendLayout();
+            this.buttonNaplati = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -55,25 +54,11 @@
             // panelCategory
             // 
             this.panelCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
-            this.panelCategory.Controls.Add(this.label7);
-            this.panelCategory.Location = new System.Drawing.Point(2, 83);
+            this.panelCategory.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelCategory.Location = new System.Drawing.Point(0, 33);
             this.panelCategory.Name = "panelCategory";
-            this.panelCategory.Size = new System.Drawing.Size(395, 653);
+            this.panelCategory.Size = new System.Drawing.Size(395, 752);
             this.panelCategory.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.AllowDrop = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(103)))), ((int)(((byte)(119)))));
-            this.label7.Location = new System.Drawing.Point(0, 658);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(504, 55);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Kamere";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelCategory
             // 
@@ -87,57 +72,58 @@
             this.labelCategory.TabIndex = 2;
             this.labelCategory.Text = "KATEGORIJE";
             this.labelCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelCategory.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
+            this.panel2.Controls.Add(this.buttonNaplati);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.buttonDeleteBillITem);
-            this.panel2.Location = new System.Drawing.Point(1122, 83);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1125, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(425, 653);
+            this.panel2.Size = new System.Drawing.Size(425, 752);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(103)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DeviceID,
-            this.DeviceName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DeviceName,
+            this.DevicePrice});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 64);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Berlin Sans FB", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -145,13 +131,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(373, 429);
             this.dataGridView1.TabIndex = 13;
             // 
+            // DeviceName
+            // 
+            this.DeviceName.DataPropertyName = "DeviceName";
+            this.DeviceName.HeaderText = "Name";
+            this.DeviceName.MinimumWidth = 8;
+            this.DeviceName.Name = "DeviceName";
+            this.DeviceName.Width = 150;
+            // 
+            // DevicePrice
+            // 
+            this.DevicePrice.DataPropertyName = "DevicePrice";
+            this.DevicePrice.HeaderText = "DevicePrice";
+            this.DevicePrice.MinimumWidth = 8;
+            this.DevicePrice.Name = "DevicePrice";
+            this.DevicePrice.Width = 150;
+            // 
             // buttonDeleteBillITem
             // 
-            this.buttonDeleteBillITem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(103)))), ((int)(((byte)(119)))));
+            this.buttonDeleteBillITem.BackColor = System.Drawing.Color.Red;
             this.buttonDeleteBillITem.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDeleteBillITem.Location = new System.Drawing.Point(43, 561);
             this.buttonDeleteBillITem.Name = "buttonDeleteBillITem";
-            this.buttonDeleteBillITem.Size = new System.Drawing.Size(131, 53);
+            this.buttonDeleteBillITem.Size = new System.Drawing.Size(148, 70);
             this.buttonDeleteBillITem.TabIndex = 12;
             this.buttonDeleteBillITem.Text = "Izbrisi";
             this.buttonDeleteBillITem.UseVisualStyleBackColor = false;
@@ -168,14 +170,15 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "RAČUN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panelDevices
             // 
-            this.panelDevices.Location = new System.Drawing.Point(400, 83);
+            this.panelDevices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDevices.Location = new System.Drawing.Point(395, 33);
             this.panelDevices.Name = "panelDevices";
-            this.panelDevices.Size = new System.Drawing.Size(726, 653);
+            this.panelDevices.Size = new System.Drawing.Size(730, 752);
             this.panelDevices.TabIndex = 2;
+            this.panelDevices.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDevices_Paint);
             // 
             // menuStrip1
             // 
@@ -190,6 +193,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1550, 33);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // zaposleniToolStripMenuItem
             // 
@@ -211,21 +215,16 @@
             this.racuniToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
             this.racuniToolStripMenuItem.Text = "Racuni";
             // 
-            // DeviceID
+            // buttonNaplati
             // 
-            this.DeviceID.DataPropertyName = "DeviceID";
-            this.DeviceID.HeaderText = "ID";
-            this.DeviceID.MinimumWidth = 8;
-            this.DeviceID.Name = "DeviceID";
-            this.DeviceID.Width = 150;
-            // 
-            // DeviceName
-            // 
-            this.DeviceName.DataPropertyName = "DeviceName";
-            this.DeviceName.HeaderText = "Name";
-            this.DeviceName.MinimumWidth = 8;
-            this.DeviceName.Name = "DeviceName";
-            this.DeviceName.Width = 150;
+            this.buttonNaplati.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(171)))), ((int)(((byte)(152)))));
+            this.buttonNaplati.Font = new System.Drawing.Font("Berlin Sans FB", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNaplati.Location = new System.Drawing.Point(233, 561);
+            this.buttonNaplati.Name = "buttonNaplati";
+            this.buttonNaplati.Size = new System.Drawing.Size(148, 70);
+            this.buttonNaplati.TabIndex = 14;
+            this.buttonNaplati.Text = "Naplati";
+            this.buttonNaplati.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -241,11 +240,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panelCategory.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -261,7 +257,6 @@
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelDevices;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem zaposleniToolStripMenuItem;
@@ -269,8 +264,9 @@
         private System.Windows.Forms.ToolStripMenuItem racuniToolStripMenuItem;
         private System.Windows.Forms.Button buttonDeleteBillITem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeviceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeviceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DevicePrice;
+        private System.Windows.Forms.Button buttonNaplati;
     }
 }
 

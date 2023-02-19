@@ -24,6 +24,8 @@ namespace MobileWorld
         public string EmployeeSurname { get; set; }
         public string EmployeeRole { get; set; }
         public string EmployeePhone { get; set; }
+        public string EmployeeUsername { get; set; }
+        public string EmployeePassword { get; set; }
     
         public virtual ICollection<Bill> Bills { get; set; }
     }

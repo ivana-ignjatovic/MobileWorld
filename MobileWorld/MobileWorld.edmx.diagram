@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="abff0fa72e5c443c92715ee2f2076353" Name="Diagram1">
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Bill" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Device" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.DeviceBill" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MOBILESTOREDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+      <Diagram DiagramId="8998ae9cba6a4881a9be385b069e9f7b" Name="Diagram1">
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Bill" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Category" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Device" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.DeviceBill" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILESTOREDBModel.Employee" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="MOBILESTOREDBModel.FK_BillEmployee" ManuallyRouted="false" />
         <AssociationConnector Association="MOBILESTOREDBModel.FK_BillID" ManuallyRouted="false" />
         <AssociationConnector Association="MOBILESTOREDBModel.FK_DeviceCategory" ManuallyRouted="false" />

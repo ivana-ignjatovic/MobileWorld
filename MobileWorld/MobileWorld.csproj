@@ -62,6 +62,12 @@
     <Compile Include="Bill.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="BillPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillPanel.Designer.cs">
+      <DependentUpon>BillPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
@@ -77,11 +83,11 @@
     <Compile Include="DeviceBill.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="DeviceItem.cs">
+    <Compile Include="DevicePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DeviceItem.Designer.cs">
-      <DependentUpon>DeviceItem.cs</DependentUpon>
+    <Compile Include="DevicePanel.Designer.cs">
+      <DependentUpon>DevicePanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Devices.cs">
       <SubType>Form</SubType>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MobileWorld.Context.cs">
       <AutoGen>True</AutoGen>
@@ -118,17 +130,23 @@
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BillPanel.resx">
+      <DependentUpon>BillPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoryPanel.resx">
       <DependentUpon>CategoryPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeviceItem.resx">
-      <DependentUpon>DeviceItem.cs</DependentUpon>
+    <EmbeddedResource Include="DevicePanel.resx">
+      <DependentUpon>DevicePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Devices.resx">
       <DependentUpon>Devices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
