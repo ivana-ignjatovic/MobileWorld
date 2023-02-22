@@ -53,28 +53,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeeForm.cs">
+    <Compile Include="WindowsForm\EmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmployeeForm.Designer.cs">
-      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    <Compile Include="WindowsForm\EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="BillPanel.cs">
+    <Compile Include="UserControlForm\BillPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BillPanel.Designer.cs">
+    <Compile Include="UserControlForm\BillPanel.Designer.cs">
       <DependentUpon>BillPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\OneBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\OneBillForm.Designer.cs">
+      <DependentUpon>OneBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\BillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\BillsForm.Designer.cs">
+      <DependentUpon>BillsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="CategoryPanel.cs">
+    <Compile Include="UserControlForm\CategoryPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CategoryPanel.Designer.cs">
+    <Compile Include="UserControlForm\CategoryPanel.Designer.cs">
       <DependentUpon>CategoryPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Device.cs">
@@ -83,31 +95,37 @@
     <Compile Include="DeviceBill.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="DevicePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DevicePanel.Designer.cs">
-      <DependentUpon>DevicePanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Devices.cs">
+    <Compile Include="WindowsForm\DeviceInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Devices.Designer.cs">
-      <DependentUpon>Devices.cs</DependentUpon>
+    <Compile Include="WindowsForm\DeviceInfoForm.Designer.cs">
+      <DependentUpon>DeviceInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlForm\DevicePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlForm\DevicePanel.Designer.cs">
+      <DependentUpon>DevicePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\DevicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\DevicesForm.Designer.cs">
+      <DependentUpon>DevicesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="WindowsForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="WindowsForm\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="WindowsForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="WindowsForm\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MobileWorld.Context.cs">
@@ -127,25 +145,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddEmployeeForm.resx">
-      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForm\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BillPanel.resx">
+    <EmbeddedResource Include="UserControlForm\BillPanel.resx">
       <DependentUpon>BillPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CategoryPanel.resx">
+    <EmbeddedResource Include="WindowsForm\OneBillForm.resx">
+      <DependentUpon>OneBillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\BillsForm.resx">
+      <DependentUpon>BillsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForm\CategoryPanel.resx">
       <DependentUpon>CategoryPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevicePanel.resx">
+    <EmbeddedResource Include="WindowsForm\DeviceInfoForm.resx">
+      <DependentUpon>DeviceInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlForm\DevicePanel.resx">
       <DependentUpon>DevicePanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Devices.resx">
-      <DependentUpon>Devices.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForm\DevicesForm.resx">
+      <DependentUpon>DevicesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForm\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="WindowsForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -197,6 +224,14 @@
       <DependentUpon>MobileWorld.edmx</DependentUpon>
       <LastGenOutput>MobileWorld.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\3994437_add_create_new_plus_positive_icon.png" />
+    <None Include="Resources\4781840_+_add_circle_create_expand_icon %282%29.png" />
+    <None Include="Resources\326659_info_icon %282%29.png" />
+    <None Include="Resources\326659_info_icon %281%29.png" />
+    <None Include="Resources\326659_info_icon.png" />
+    <None Include="Resources\4781812_bin_delete_file_garbage_recycle_icon.png" />
+    <None Include="Resources\4781840_+_add_circle_create_expand_icon %281%29.png" />
+    <None Include="Resources\4781840_+_add_circle_create_expand_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

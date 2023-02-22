@@ -63,6 +63,86 @@ namespace MobileWorld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _326659_info_icon {
+            get {
+                object obj = ResourceManager.GetObject("326659_info_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _326659_info_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("326659_info_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _326659_info_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("326659_info_icon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3994437_add_create_new_plus_positive_icon {
+            get {
+                object obj = ResourceManager.GetObject("3994437_add_create_new_plus_positive_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4781812_bin_delete_file_garbage_recycle_icon {
+            get {
+                object obj = ResourceManager.GetObject("4781812_bin_delete_file_garbage_recycle_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4781840___add_circle_create_expand_icon {
+            get {
+                object obj = ResourceManager.GetObject("4781840_+_add_circle_create_expand_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4781840___add_circle_create_expand_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("4781840_+_add_circle_create_expand_icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4781840___add_circle_create_expand_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("4781840_+_add_circle_create_expand_icon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap casino_poker_heart_figure_line_style_icon_free_vector {
             get {
                 object obj = ResourceManager.GetObject("casino-poker-heart-figure-line-style-icon-free-vector", resourceCulture);

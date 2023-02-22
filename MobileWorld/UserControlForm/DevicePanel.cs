@@ -70,5 +70,17 @@ namespace MobileWorld
         {
             ButtonClick?.Invoke(this, e);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DeviceInfoForm deviceInfo = new DeviceInfoForm(currentDevice);
+            deviceInfo.ShowDialog();
+            
+        }
+
+        private void panelImage_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,8 +29,9 @@ namespace MobileWorld
                 if(employee.EmployeeUsername.Equals(username)&& employee.EmployeePassword.Equals(password))
                 { 
                     validate= true;
-                    Form1 main = new Form1();
+                    MainForm main = new MainForm();
                     this.Hide();
+                    Properties.Settings.Default.UserId = employee.EmployeeID;
                     main.ShowDialog();
                 }
                 else

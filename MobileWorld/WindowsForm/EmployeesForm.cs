@@ -11,10 +11,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MobileWorld
 {
-    public partial class AddEmployeeForm : Form
+    public partial class EmployeesForm : Form
     {
         public string originalValue;
-        public AddEmployeeForm()
+        public EmployeesForm()
         {
             InitializeComponent();
             RefreshData();

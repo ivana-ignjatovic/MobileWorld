@@ -14,29 +14,51 @@ using System.Xml.Linq;
 
 namespace MobileWorld
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private List<Device> devicesForBill = new List<Device>();
-        public Form1()
+        private List <DeviceBill> itemsBill= new List<DeviceBill>();
+       
+        public MainForm()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            int x = 10;
+            int y = 10;
+            int counter = 0;
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             List<Category> categories = new List<Category>();
             categories=context.Categories.ToList();
+            List<Device> devices = new List<Device>();
             foreach(var category in categories)
             {
                 var categoryItem = new CategoryPanel(category);
                 categoryItem.ButtonClick += CategoryPanel_LabelClick;
                 categoryItem.Location = new Point(50, 50 + (categories.IndexOf(category) * categoryItem.Height));
-                int x = (panelCategory.Width - categoryItem.Width) / 2;
-                categoryItem.Left = x;
+                int x1 = (panelCategory.Width - categoryItem.Width) / 2;
+                categoryItem.Left = x1;
                 
 
                 panelCategory.Controls.Add(categoryItem);
+            }
+            foreach(var device in devices)
+            {
+                var deviceItem = new DevicePanel(device);
+                deviceItem.ButtonClick += DeviceItem_ButtonClick;
+                deviceItem.Location = new Point(x, y);
+                panelDevices.Controls.Add(deviceItem);
+
+                x += deviceItem.Width + 10;
+                counter++;
+                if (counter % 2 == 0)
+                {
+                    x = 10;
+                    y += deviceItem.Height + 10;
+                }
+
+
             }
         }
         private void DeviceItem_ButtonClick(object sender, EventArgs e)
@@ -46,16 +68,19 @@ namespace MobileWorld
             devices = context.Devices.ToList();
             DevicePanel deviceItem = (DevicePanel)sender;
             Device currentDevice = deviceItem.currentDevice;
+           
+            
+           
 
             // devicesForBill.Add(currentDevice);
 
-            
 
+            devicesForBill.Add(currentDevice);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = System.Drawing.Color.White;
 
-            dataGridView1.Rows.Add(currentDevice.DeviceName+ ".......................................", "............." + currentDevice.DevicePrice+"RSD");
+            dataGridView1.Rows.Add(currentDevice.DeviceID, currentDevice.DeviceName+ ".......................................",  currentDevice.DevicePrice);
                     
                 
          
@@ -119,19 +144,19 @@ namespace MobileWorld
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
-            var employee = new AddEmployeeForm();
+            var employee = new EmployeesForm();
             employee.ShowDialog();
         }
 
         private void zaposleniToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var employee = new AddEmployeeForm();
+            var employee = new EmployeesForm();
             employee.ShowDialog();
         }
 
         private void uredjajiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var devices = new Devices();
+            var devices = new DevicesForm();
             devices.ShowDialog();
         }
 
@@ -143,6 +168,60 @@ namespace MobileWorld
         private void panelDevices_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonNaplati_Click(object sender, EventArgs e)
+        {
+            Bill bill = new Bill();
+            int sum = 0;
+            MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
+            bill.BillEmployee = Properties.Settings.Default.UserId;
+            bill.BillDateTime = DateTime.Now;
+            for (int i = 0;i<dataGridView1.Rows.Count;i++)
+            {
+                sum += Convert.ToInt32(dataGridView1.Rows[i].Cells["DevicePrice"].Value);
+            }
+            bill.BillTotal = sum;
+
+            context.Bills.Add(bill);
+            context.SaveChanges();
+            List <DeviceBill> itemsBill = new List<DeviceBill>();
+            foreach (var device in devicesForBill)
+            {
+                if (context.DeviceBills.Where(db => db.BillID == bill.BillID && db.DeviceID == device.DeviceID).Any())
+                {
+                    DeviceBill itemBill = context.DeviceBills.First(db => db.BillID == bill.BillID && db.DeviceID == device.DeviceID);
+                    itemBill.Quantity += 1;
+                }
+                else
+                {
+                DeviceBill itemBill = new DeviceBill();
+                itemBill.DeviceID = device.DeviceID;
+                itemBill.BillID = bill.BillID;
+                itemBill.Quantity = 1;
+                context.DeviceBills.Add(itemBill);
+                }
+                context.SaveChanges();
+            }
+         
+            
+            var billPanel = new OneBillForm(bill);
+            
+            billPanel.ShowDialog();
+        }
+
+        private void buttonDeleteBillITem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                dataGridView1.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void racuniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bill = new BillsForm();
+            bill.ShowDialog();
         }
     }
 }

@@ -15,13 +15,13 @@ using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace MobileWorld
 {
-    public partial class Devices : Form
+    public partial class DevicesForm : Form
     {
         
         public OpenFileDialog dialog;
         public Image img;
         public byte[] byteimg;
-        public Devices()
+        public DevicesForm()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace MobileWorld
         {
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             dataGridView1.DataSource = context.Categories.ToList();
-            Form1 form= new Form1();
+            MainForm form= new MainForm();
             
             
         }
@@ -83,29 +83,11 @@ namespace MobileWorld
         }
        
 
-        byte[] ConvertImageToBinary(Image img)
-        {
-            using (var ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                return ms.ToArray();
-            }
-        }
+  
 
 
 
-private static byte[] CompressImage(Image image, long quality)
-    {
-        using (var ms = new MemoryStream())
-        {
-            // Smanjivanje veličine slike
-            var encoderParameters = new EncoderParameters(1);
-            encoderParameters.Param[0] = new EncoderParameter(Encoder.Quality, quality);
-            image.Save(ms, GetEncoder(ImageFormat.Jpeg), encoderParameters);
 
-            return ms.ToArray();
-        }
-    }
 
     private static ImageCodecInfo GetEncoder(ImageFormat format)
     {

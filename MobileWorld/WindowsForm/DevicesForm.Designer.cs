@@ -1,6 +1,6 @@
 ﻿namespace MobileWorld
 {
-    partial class Devices
+    partial class DevicesForm
     {
         /// <summary>
         /// Required designer variable.
