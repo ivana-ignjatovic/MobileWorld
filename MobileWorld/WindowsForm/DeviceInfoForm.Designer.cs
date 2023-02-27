@@ -50,7 +50,6 @@
             this.labelDeviceName.TabIndex = 1;
             this.labelDeviceName.Text = "Naziv uredjaja";
             this.labelDeviceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelDeviceName.Click += new System.EventHandler(this.labelDeviceName_Click);
             // 
             // labelPrice
             // 
@@ -160,7 +159,6 @@
             this.Controls.Add(this.labelDeviceName);
             this.Name = "DeviceInfoForm";
             this.Text = "Informacije o uredjaju";
-            this.Load += new System.EventHandler(this.DeviceInfoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

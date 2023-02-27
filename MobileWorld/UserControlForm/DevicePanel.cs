@@ -19,7 +19,6 @@ namespace MobileWorld
         public DevicePanel(Device device)
         {
            
-            
             InitializeComponent();
             currentDevice= device;
             label1.Text = device.DeviceName;
@@ -29,16 +28,10 @@ namespace MobileWorld
 
             if (device.DeviceImage!= null)
             {
-
                 panelImage.BackgroundImage= Image.FromStream(new MemoryStream(Convert.FromBase64String(device.DeviceImage)));
-              
             }
-         
              
         }
-       
-
-      
 
         Image ConvertBinaryToImage(byte [] data)
         {
@@ -48,18 +41,6 @@ namespace MobileWorld
             }
 
         }
-
-        private void DeviceItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
 
         internal void buttonAddToBill_Click(object v, object sender, EventArgs eventArgs, EventArgs e)
         {
@@ -78,9 +59,5 @@ namespace MobileWorld
             
         }
 
-        private void panelImage_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

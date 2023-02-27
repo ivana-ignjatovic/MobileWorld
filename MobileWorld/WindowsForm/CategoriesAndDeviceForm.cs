@@ -15,13 +15,13 @@ using Encoder = System.Drawing.Imaging.Encoder;
 
 namespace MobileWorld
 {
-    public partial class DevicesForm : Form
+    public partial class CategoriesAndDeviceForm : Form
     {
         
         public OpenFileDialog dialog;
         public Image img;
         public byte[] byteimg;
-        public DevicesForm()
+        public CategoriesAndDeviceForm()
         {
             InitializeComponent();
         }
@@ -37,7 +37,6 @@ namespace MobileWorld
                     comboBox1.Items.Add(category.CategoryName);
                 }
             }
-
 
         }
         private void RefreshData()
@@ -77,18 +76,6 @@ namespace MobileWorld
             }
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-       
-
-  
-
-
-
-
-
     private static ImageCodecInfo GetEncoder(ImageFormat format)
     {
         var codecs = ImageCodecInfo.GetImageDecoders();
@@ -112,24 +99,13 @@ namespace MobileWorld
             }
 
         }
-        //Open file in to a filestream and read data in a byte array.
         byte[] ReadFile(string sPath)
         {
-            //Initialize byte array with a null value initially.
             byte[] data = null;
-
-            //Use FileInfo object to get file size.
             FileInfo fInfo = new FileInfo(sPath);
             long numBytes = fInfo.Length;
-
-            //Open FileStream to read file
             FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
-
-            //Use BinaryReader to read file stream into byte array.
             BinaryReader br = new BinaryReader(fStream);
-
-            //When you use BinaryReader, you need to supply number of bytes to read from file.
-            //In this case we want to read entire file. So supplying total number of bytes.
             data = br.ReadBytes((int)numBytes);
             return data;
         }
@@ -138,37 +114,42 @@ namespace MobileWorld
         {
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             Device device= new Device();
-            device.DeviceName= textBoxDeviceName.Text;
-            device.DevicePrice = textBoxDevicePrice.Text;
-            device.DeviceCharact = richTextBox1.Text;
-            int selectedCategoryID = 0;
-
-
-            foreach (var category in context.Categories)
+            if(textBoxDeviceName.Text=="" ||
+                textBoxDevicePrice.Text=="" )
             {
-                if (category.CategoryName == comboBox1.SelectedItem.ToString())
+                MessageBox.Show("Morate uneti sva polja!");
+            }
+            else
+            {
+                device.DeviceName = textBoxDeviceName.Text;
+                device.DevicePrice = textBoxDevicePrice.Text;
+                device.DeviceCharact = richTextBox1.Text;
+                int selectedCategoryID = 0;
+                foreach (var category in context.Categories)
                 {
-                    selectedCategoryID = category.CategoryID;
-                    break;
+                    if (category.CategoryName == comboBox1.SelectedItem.ToString())
+                    {
+                        selectedCategoryID = category.CategoryID;
+                        break;
+                    }
                 }
+                device.DeviceCategory = selectedCategoryID;
+                if (byteimg != null)
+                {
+                    byte[] imageArray = System.IO.File.ReadAllBytes(lblFileName.Text);
+                    string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+                    device.DeviceImage = base64ImageRepresentation;
+                }
+                context.Devices.Add(device);
+                context.SaveChanges();
+                MessageBox.Show("Uspesno ste uneli uredjaj!");
+                textBoxDeviceName.Text = string.Empty;
+                textBoxDevicePrice.Text = string.Empty;
+                richTextBox1.Text = string.Empty;
+                pictureBox1.Image = null;
+                RefreshData();
             }
-            device.DeviceCategory = selectedCategoryID;
-             if (byteimg != null)
-            {
-                byte[] imageArray = System.IO.File.ReadAllBytes(lblFileName.Text);
-                string base64ImageRepresentation = Convert.ToBase64String(imageArray);
-                device.DeviceImage = base64ImageRepresentation;
-            }
-            context.Devices.Add(device);
-            context.SaveChanges();
-            MessageBox.Show("Uspesno ste uneli uredjaj!");
-            textBoxDeviceName.Text =string.Empty;
-            textBoxDevicePrice.Text = string.Empty;
-            richTextBox1.Text = string.Empty;
-            pictureBox1.Image = null;
-
-
-            RefreshData();
+         
         }
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
@@ -182,14 +163,6 @@ namespace MobileWorld
             RefreshData();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

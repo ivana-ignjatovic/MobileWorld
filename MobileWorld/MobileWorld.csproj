@@ -107,11 +107,11 @@
     <Compile Include="UserControlForm\DevicePanel.Designer.cs">
       <DependentUpon>DevicePanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\DevicesForm.cs">
+    <Compile Include="WindowsForm\CategoriesAndDeviceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\DevicesForm.Designer.cs">
-      <DependentUpon>DevicesForm.cs</DependentUpon>
+    <Compile Include="WindowsForm\CategoriesAndDeviceForm.Designer.cs">
+      <DependentUpon>CategoriesAndDeviceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>MobileWorld.tt</DependentUpon>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="UserControlForm\DevicePanel.resx">
       <DependentUpon>DevicePanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\DevicesForm.resx">
-      <DependentUpon>DevicesForm.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForm\CategoriesAndDeviceForm.resx">
+      <DependentUpon>CategoriesAndDeviceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

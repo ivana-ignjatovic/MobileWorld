@@ -17,66 +17,35 @@ namespace MobileWorld
         List<DeviceBill> deviceBill;
         public OneBillForm(Bill b)
         {
+            InitializeComponent();
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             deviceBill = context.DeviceBills.Where(db => db.BillID == b.BillID).ToList();
-            InitializeComponent();
-            lblBillID.Text= b.BillID.ToString();
-            lblEmployee.Text= b.BillEmployee.ToString();
-            
+            lblBillID.Text = b.BillID.ToString();
+
+            Employee emp = context.Employees.Where(e => e.EmployeeID == b.BillEmployee).FirstOrDefault();
+            lblEmployee.Text = emp.EmployeeName.ToString() + " " + emp.EmployeeSurname.ToString();
+           
             foreach (var item in deviceBill)
             {
-                labelBil.Text += "\n" + item.Device.DeviceName + "        " + item.Device.DevicePrice + "      " + item.Quantity;
-                
+            
+                labelBil.Text += "\n" + item.Device.DeviceName + "\n                             " 
+                    + item.Device.DevicePrice + "      " + item.Quantity;
 
             }
-            labelTotal.Text= b.BillTotal.ToString();
+            labelBil.Text = labelBil.Text;
+            labelTotal.Text = b.BillTotal.ToString();
             lblBillDate.Text = b.BillDateTime.ToString();
             bill = b;
-         
-            
-            
+          
         }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void Refresh()
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBillID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmployee_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BillPanel_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void BillPanel_FormClosed(object sender, FormClosedEventArgs e)
-        {
+            lblBillID.Text = "";
+            lblBillDate.Text = "";
+            lblEmployee.Text = "";
+            labelTotal.Text = "";
             labelBil.Text = "";
         }
-
         private void buttonNaplati_Click(object sender, EventArgs e)
         {
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
@@ -87,6 +56,16 @@ namespace MobileWorld
                 context.SaveChanges();
             }
             
+        }
+
+        private void OneBillForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void OneBillForm_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            Refresh();
         }
     }
 }

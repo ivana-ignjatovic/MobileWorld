@@ -23,11 +23,6 @@ namespace MobileWorld
             lblCategoryId.Text = category.CategoryID.ToString();
         }
 
-        private void CategoryPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void labelCategory_Click(object sender, EventArgs e)
         {
             ButtonClick?.Invoke(this, e);

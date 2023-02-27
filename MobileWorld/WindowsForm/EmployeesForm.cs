@@ -33,8 +33,8 @@ namespace MobileWorld
             {
                 MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
                 var employees = context.Employees.ToList();
-                var result = employees.Where(x => x.EmployeeUsername == textBoxUsername.Text);
-                if (result == null)
+              //  var result = ;
+                if (!employees.Where(x => x.EmployeeUsername == textBoxUsername.Text).Any())
                 {
                     Employee employee = new Employee();
                     employee.EmployeeName = textBoxName.Text;
@@ -48,7 +48,6 @@ namespace MobileWorld
                     context.SaveChanges();
                     MessageBox.Show("Uspesno ste uneli radnika!");
                     ClearTextBox();
-
 
                 }
                 else
@@ -67,7 +66,6 @@ namespace MobileWorld
             textBoxPhone.Clear();
             textBoxUsername.Clear();
             textBoxPassword.Clear();
-            comboBoxRole.Items.Clear();
             RefreshData();
         }
 
@@ -108,7 +106,6 @@ namespace MobileWorld
                 employee.EmployeeSurname = dataGridView1.SelectedRows[0].Cells["EmployeeSurname"].Value.ToString();
                 employee.EmployeePhone = dataGridView1.SelectedRows[0].Cells["EmployeePhone"].Value.ToString();
                 employee.EmployeeRole = dataGridView1.SelectedRows[0].Cells["EmployeeRole"].Value.ToString();
-                //context.Employees.Remove(employee);
                 context.SaveChanges();
                 RefreshData();
             }
@@ -126,16 +123,6 @@ namespace MobileWorld
                     dataGridView1.CancelEdit();
                 }
             }
-        }
-
-        private void AddEmployeeForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

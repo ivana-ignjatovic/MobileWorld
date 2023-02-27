@@ -37,9 +37,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonNaplati = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DeviceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeviceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DevicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonDeleteBillITem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDevices = new System.Windows.Forms.Panel();
@@ -47,6 +44,8 @@
             this.zaposleniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uredjajiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.racuniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeviceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DevicePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -119,7 +118,6 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DeviceID,
             this.DeviceName,
             this.DevicePrice});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -131,7 +129,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 51);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 43);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -148,30 +146,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(332, 343);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // DeviceID
-            // 
-            this.DeviceID.DataPropertyName = "DeviceID";
-            this.DeviceID.HeaderText = "DeviceID";
-            this.DeviceID.MinimumWidth = 6;
-            this.DeviceID.Name = "DeviceID";
-            this.DeviceID.Width = 125;
-            // 
-            // DeviceName
-            // 
-            this.DeviceName.DataPropertyName = "DeviceName";
-            this.DeviceName.HeaderText = "Name";
-            this.DeviceName.MinimumWidth = 8;
-            this.DeviceName.Name = "DeviceName";
-            this.DeviceName.Width = 150;
-            // 
-            // DevicePrice
-            // 
-            this.DevicePrice.DataPropertyName = "DevicePrice";
-            this.DevicePrice.HeaderText = "DevicePrice";
-            this.DevicePrice.MinimumWidth = 8;
-            this.DevicePrice.Name = "DevicePrice";
-            this.DevicePrice.Width = 150;
             // 
             // buttonDeleteBillITem
             // 
@@ -207,7 +181,6 @@
             this.panelDevices.Name = "panelDevices";
             this.panelDevices.Size = new System.Drawing.Size(649, 600);
             this.panelDevices.TabIndex = 2;
-            this.panelDevices.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDevices_Paint);
             // 
             // menuStrip1
             // 
@@ -222,7 +195,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1378, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // zaposleniToolStripMenuItem
             // 
@@ -245,7 +217,23 @@
             this.racuniToolStripMenuItem.Text = "Racuni";
             this.racuniToolStripMenuItem.Click += new System.EventHandler(this.racuniToolStripMenuItem_Click);
             // 
-            // Form1
+            // DeviceName
+            // 
+            this.DeviceName.DataPropertyName = "DeviceName";
+            this.DeviceName.HeaderText = "Name";
+            this.DeviceName.MinimumWidth = 8;
+            this.DeviceName.Name = "DeviceName";
+            this.DeviceName.Width = 150;
+            // 
+            // DevicePrice
+            // 
+            this.DevicePrice.DataPropertyName = "DevicePrice";
+            this.DevicePrice.HeaderText = "DevicePrice";
+            this.DevicePrice.MinimumWidth = 8;
+            this.DevicePrice.Name = "DevicePrice";
+            this.DevicePrice.Width = 150;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,8 +247,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -285,7 +272,6 @@
         private System.Windows.Forms.Button buttonDeleteBillITem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonNaplati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeviceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeviceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DevicePrice;
     }

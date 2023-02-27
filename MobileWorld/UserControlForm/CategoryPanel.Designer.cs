@@ -41,7 +41,7 @@
             this.labelCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(103)))), ((int)(((byte)(119)))));
             this.labelCategory.Location = new System.Drawing.Point(0, 0);
             this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(402, 66);
+            this.labelCategory.Size = new System.Drawing.Size(357, 53);
             this.labelCategory.TabIndex = 5;
             this.labelCategory.Text = "Naziv kategorije";
             this.labelCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -50,21 +50,21 @@
             // lblCategoryId
             // 
             this.lblCategoryId.AutoSize = true;
-            this.lblCategoryId.Location = new System.Drawing.Point(365, 16);
+            this.lblCategoryId.Location = new System.Drawing.Point(324, 13);
             this.lblCategoryId.Name = "lblCategoryId";
-            this.lblCategoryId.Size = new System.Drawing.Size(0, 20);
+            this.lblCategoryId.Size = new System.Drawing.Size(0, 16);
             this.lblCategoryId.TabIndex = 6;
             // 
             // CategoryPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(216)))), ((int)(((byte)(228)))));
             this.Controls.Add(this.lblCategoryId);
             this.Controls.Add(this.labelCategory);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CategoryPanel";
-            this.Size = new System.Drawing.Size(402, 102);
-            this.Load += new System.EventHandler(this.CategoryPanel_Load);
+            this.Size = new System.Drawing.Size(357, 82);
             this.ResumeLayout(false);
             this.PerformLayout();
 

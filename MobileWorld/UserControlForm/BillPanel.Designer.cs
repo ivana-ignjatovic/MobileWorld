@@ -78,7 +78,6 @@
             this.Controls.Add(this.lblDeviceID);
             this.Name = "BillPanel";
             this.Size = new System.Drawing.Size(251, 219);
-            this.Load += new System.EventHandler(this.BillPanel_Load);
             this.ResumeLayout(false);
 
         }

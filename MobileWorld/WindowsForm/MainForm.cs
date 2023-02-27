@@ -22,34 +22,37 @@ namespace MobileWorld
         public MainForm()
         {
             InitializeComponent();
+            panelDevices.AutoScroll= true;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+          RefreshForm();    
+        }
+        private void RefreshForm()
+        {
+            panelCategory.Controls.Clear();
             int x = 10;
             int y = 10;
             int counter = 0;
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             List<Category> categories = new List<Category>();
-            categories=context.Categories.ToList();
-            List<Device> devices = new List<Device>();
-            foreach(var category in categories)
+            categories = context.Categories.ToList();
+            List<Device> devices = context.Devices.ToList();
+            foreach (var category in categories)
             {
                 var categoryItem = new CategoryPanel(category);
                 categoryItem.ButtonClick += CategoryPanel_LabelClick;
                 categoryItem.Location = new Point(50, 50 + (categories.IndexOf(category) * categoryItem.Height));
                 int x1 = (panelCategory.Width - categoryItem.Width) / 2;
                 categoryItem.Left = x1;
-                
-
                 panelCategory.Controls.Add(categoryItem);
             }
-            foreach(var device in devices)
+            foreach (var device in devices)
             {
                 var deviceItem = new DevicePanel(device);
                 deviceItem.ButtonClick += DeviceItem_ButtonClick;
                 deviceItem.Location = new Point(x, y);
                 panelDevices.Controls.Add(deviceItem);
-
                 x += deviceItem.Width + 10;
                 counter++;
                 if (counter % 2 == 0)
@@ -57,7 +60,6 @@ namespace MobileWorld
                     x = 10;
                     y += deviceItem.Height + 10;
                 }
-
 
             }
         }
@@ -68,30 +70,14 @@ namespace MobileWorld
             devices = context.Devices.ToList();
             DevicePanel deviceItem = (DevicePanel)sender;
             Device currentDevice = deviceItem.currentDevice;
-           
-            
-           
-
-            // devicesForBill.Add(currentDevice);
-
-
             devicesForBill.Add(currentDevice);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = System.Drawing.Color.White;
 
-            dataGridView1.Rows.Add(currentDevice.DeviceID, currentDevice.DeviceName+ ".......................................",  currentDevice.DevicePrice);
+            dataGridView1.Rows.Add( currentDevice.DeviceName+
+                ".......................................",  currentDevice.DevicePrice);
                     
-                
-         
-
-
-
-
-
-            //dataGridView1.DataSource = devicesForBill;
-            Console.WriteLine("Usao " + devicesForBill.Count());
-            
 
         }
         private void CategoryPanel_LabelClick(object sender, EventArgs e)
@@ -127,20 +113,10 @@ namespace MobileWorld
                 else
                 {
                     Console.WriteLine("Nema uredjaja za datu kategoriju");
-              }  
-         
-
+                }  
             }
 
         }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
@@ -156,36 +132,28 @@ namespace MobileWorld
 
         private void uredjajiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var devices = new DevicesForm();
+            var devices = new CategoriesAndDeviceForm();
             devices.ShowDialog();
+            RefreshForm();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+       private void Naplata()
         {
-
-        }
-
-        private void panelDevices_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void buttonNaplati_Click(object sender, EventArgs e)
-        {
+            
             Bill bill = new Bill();
             int sum = 0;
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             bill.BillEmployee = Properties.Settings.Default.UserId;
             bill.BillDateTime = DateTime.Now;
-            for (int i = 0;i<dataGridView1.Rows.Count;i++)
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 sum += Convert.ToInt32(dataGridView1.Rows[i].Cells["DevicePrice"].Value);
             }
             bill.BillTotal = sum;
-
+            dataGridView1.Rows.Clear();
             context.Bills.Add(bill);
             context.SaveChanges();
-            List <DeviceBill> itemsBill = new List<DeviceBill>();
+            List<DeviceBill> itemsBill = new List<DeviceBill>();
+            
             foreach (var device in devicesForBill)
             {
                 if (context.DeviceBills.Where(db => db.BillID == bill.BillID && db.DeviceID == device.DeviceID).Any())
@@ -195,19 +163,23 @@ namespace MobileWorld
                 }
                 else
                 {
-                DeviceBill itemBill = new DeviceBill();
-                itemBill.DeviceID = device.DeviceID;
-                itemBill.BillID = bill.BillID;
-                itemBill.Quantity = 1;
-                context.DeviceBills.Add(itemBill);
+                    DeviceBill itemBill = new DeviceBill();
+                    itemBill.DeviceID = device.DeviceID;
+                    itemBill.BillID = bill.BillID;
+                    itemBill.Quantity = 1;
+                    context.DeviceBills.Add(itemBill);
                 }
                 context.SaveChanges();
             }
-         
-            
+
+
             var billPanel = new OneBillForm(bill);
-            
+
             billPanel.ShowDialog();
+        }
+        private void buttonNaplati_Click(object sender, EventArgs e)
+        {
+            Naplata(); 
         }
 
         private void buttonDeleteBillITem_Click(object sender, EventArgs e)

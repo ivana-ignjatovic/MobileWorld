@@ -26,10 +26,6 @@ namespace MobileWorld
         {
             ButtonClick?.Invoke(this, e);
         }
-        private void BillPanel_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonInfo_Click(object sender, EventArgs e)
         {

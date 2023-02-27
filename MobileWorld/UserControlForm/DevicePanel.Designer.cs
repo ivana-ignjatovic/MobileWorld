@@ -64,7 +64,6 @@
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(199, 119);
             this.panelImage.TabIndex = 2;
-            this.panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelImage_Paint);
             // 
             // labelId
             // 
@@ -121,7 +120,6 @@
             this.Name = "DevicePanel";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(287, 241);
-            this.Load += new System.EventHandler(this.DeviceItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

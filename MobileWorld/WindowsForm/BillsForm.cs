@@ -15,6 +15,7 @@ namespace MobileWorld
         public BillsForm()
         {
             InitializeComponent();
+            panel1.AutoScroll = true;
         }
 
         private void Bills_Load(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace MobileWorld
             int y = 10;
             int counter = 0;
             bills = context.Bills.ToList();
-            panel1.AutoScroll= true;
+            
             foreach (var bill in bills)
             {
                 var billPanel = new BillPanel(bill); 
@@ -35,7 +36,7 @@ namespace MobileWorld
                 x += billPanel.Width + 10;
                // y += billPanel.Height + 50;
                 counter++;
-                if (counter % 5 == 0)
+                if (counter % 4 == 0)
                 {
                     x = 10;
                     y += billPanel.Height + 10;

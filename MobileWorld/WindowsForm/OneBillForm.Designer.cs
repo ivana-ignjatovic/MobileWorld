@@ -70,18 +70,18 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblBillID);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(31, 24);
+            this.panel1.Location = new System.Drawing.Point(12, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(516, 595);
+            this.panel1.Size = new System.Drawing.Size(548, 595);
             this.panel1.TabIndex = 5;
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("DejaVu Sans Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 494);
+            this.label11.Location = new System.Drawing.Point(4, 494);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(516, 39);
+            this.label11.Size = new System.Drawing.Size(539, 39);
             this.label11.TabIndex = 21;
             this.label11.Text = "========KRAJ FISKALNOG RACUNA ========";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,9 +89,9 @@
             // lblBillDate
             // 
             this.lblBillDate.Font = new System.Drawing.Font("DejaVu Sans Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillDate.Location = new System.Drawing.Point(282, 449);
+            this.lblBillDate.Location = new System.Drawing.Point(263, 449);
             this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(234, 21);
+            this.lblBillDate.Size = new System.Drawing.Size(280, 21);
             this.lblBillDate.TabIndex = 20;
             this.lblBillDate.Text = "01/01/2023";
             this.lblBillDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,9 +119,9 @@
             // labelBil
             // 
             this.labelBil.Font = new System.Drawing.Font("DejaVu Sans Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBil.Location = new System.Drawing.Point(0, 282);
+            this.labelBil.Location = new System.Drawing.Point(20, 282);
             this.labelBil.Name = "labelBil";
-            this.labelBil.Size = new System.Drawing.Size(513, 86);
+            this.labelBil.Size = new System.Drawing.Size(521, 86);
             this.labelBil.TabIndex = 17;
             // 
             // labelMove2
@@ -147,7 +147,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("DejaVu Sans Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(0, 244);
+            this.label8.Location = new System.Drawing.Point(25, 244);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(516, 22);
             this.label8.TabIndex = 14;
@@ -157,11 +157,11 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("DejaVu Sans Mono", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 221);
+            this.label7.Location = new System.Drawing.Point(16, 221);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(516, 23);
             this.label7.TabIndex = 13;
-            this.label7.Text = "=================================================";
+            this.label7.Text = "===================================================";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -193,7 +193,6 @@
             this.lblEmployee.TabIndex = 10;
             this.lblEmployee.Text = "Ivana I.";
             this.lblEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEmployee.Click += new System.EventHandler(this.lblEmployee_Click);
             // 
             // label4
             // 
@@ -204,7 +203,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Kasir:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -215,7 +213,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Marsala Tita 3, 32000 Cacak";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -226,7 +223,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Prodavnica mobilne opreme Mobile World";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblBillID
             // 
@@ -237,7 +233,6 @@
             this.lblBillID.TabIndex = 6;
             this.lblBillID.Text = "1067805";
             this.lblBillID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblBillID.Click += new System.EventHandler(this.lblBillID_Click);
             // 
             // label1
             // 
@@ -248,7 +243,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "==========FISKALNI RACUN =========";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // OneBillForm
             // 
@@ -259,8 +253,6 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OneBillForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BillPanel_FormClosed);
-            this.Load += new System.EventHandler(this.BillPanel_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -268,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

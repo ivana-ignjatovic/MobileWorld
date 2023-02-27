@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,15 +20,17 @@ namespace MobileWorld
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            bool validate  = false;
+            bool validate = false;
             string username = textBoxUsern.Text;
             string password = textBoxPass.Text;
             MOBILESTOREDBEContext context = new MOBILESTOREDBEContext();
             List<Employee> employees = context.Employees.ToList();
+           
             foreach (Employee employee in employees)
             {
                 if(employee.EmployeeUsername.Equals(username)&& employee.EmployeePassword.Equals(password))
                 { 
+                    
                     validate= true;
                     MainForm main = new MainForm();
                     this.Hide();
@@ -37,8 +40,14 @@ namespace MobileWorld
                 else
                 {
                     validate = false;
+                } 
+                if (validate == true)
+                {
+                return;
+                 
                 }
             }
+            
             if (validate == false)
             {
                 MessageBox.Show("Uneli ste pogresne podatke za prijavu!");
